@@ -1,0 +1,44 @@
+
+body{
+display: grid;
+grid-template-rows: auto;
+grid-template-columns: 20% 60% 20%;
+grid-template-areas:
+   "header header header"
+   "nav main aside"
+   "footer footer footer";
+}
+
+header{
+    grid-area: header;
+    background-color:  peachpuff;
+    color: white;
+    display: flex;
+}
+
+nav{
+    grid-area: nav;
+    background-color: gray;
+    color: green;
+
+}
+
+main{
+    grid-area: main;
+    background-color: darkblue;
+    color: white;
+    padding: 20px;
+}
+
+aside{
+    grid-area: aside;
+    background-color: yellow;
+    color: green;
+
+}
+
+footer{
+    grid-area: footer;
+    background-color: orange;
+    color:white
+}
