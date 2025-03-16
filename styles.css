@@ -1,33 +1,70 @@
 
 body{
+width: 100%;
+min-height: 100vh;
+overflow-x: hidden;
+background-color: #adb5bd;
 display: grid;
 grid-template-rows: auto;
 grid-template-columns: 20% 60% 20%;
 grid-template-areas:
    "header header header"
-   "nav main aside"
+   "nav nav nav"
+   "main main main"
    "footer footer footer";
 }
 
 header{
     grid-area: header;
-    background-color:  peachpuff;
-    color: white;
+    background-color:  transparent;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 5%;
     display: flex;
+    justify-content: space-between;
+    align-items: normal;
+}
+
+.links{
+    font-size: 19px;
+    font-weight: 600;
+    background-color: transparent;
 }
 
 nav{
     grid-area: nav;
-    background-color: gray;
-    color: green;
+    background-color: black;
+    padding: 10px 0;
+    border: none;
+    box-shadow: none;
+}
 
+nav ul{
+    display: flex;
+    justify-content: space-evenly;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border: none;
+    box-shadow: none;
+}
+
+nav a{
+    font-size: 15px;
+    color: white;
+    margin-left: 20px;
+    font-weight: 500;
+    border: none;
+    box-shadow: none;
+    background-color: transparent;
 }
 
 main{
     grid-area: main;
-    background-color: darkblue;
-    color: white;
+    background-color: transparent;
     padding: 20px;
+    margin-top: 100px;
 }
 
 aside{
