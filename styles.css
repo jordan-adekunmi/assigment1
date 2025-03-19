@@ -1,12 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+}
+
 
 body{
 width: 100%;
 min-height: 100vh;
 overflow-x: hidden;
 background-color: #adb5bd;
+background-image: url(me.png);
+background-size: 1500px 1500px;
+background-position: center;
+ background-repeat: no-repeat;
+ background-attachment: scroll;
+color: white; 
 display: grid;
-grid-template-rows: auto;
-grid-template-columns: 20% 60% 20%;
+grid-template-rows: auto auto 1fr auto;
+grid-template-columns: 2fr 2fr 1fr;
 grid-template-areas:
    "header header header"
    "nav nav nav"
@@ -24,7 +40,69 @@ header{
     display: flex;
     justify-content: space-between;
     align-items: normal;
+    z-index: 1000;
 }
+
+header h1{
+    font-size: 32px;
+    color: #6c757d;
+}
+
+.logo{
+    font-size: 32px;
+    color: #6c757d;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.typing-textP{
+    font-size: 34px;
+    font-weight: 600;
+    min-width: 280px;
+}
+
+.typing-text span{
+    position: relative;
+}
+
+.typing-text span::before{
+    content: "Web Developer";
+    color: #6c757d;
+    animation: words 20s infinite;
+}
+
+.typing-text span::after{
+    content: "";
+    position: absolute;
+    width: calc(100% + 8px);
+    height: 100%;
+    border-left: 3px solid black;
+    animation: cursor 0.6s infinite;
+}
+
+@keyframes cursor{
+    to{
+        border-left: 3px solid#6c757d
+    }
+  }
+  
+  @keyframes words{
+    0%, 20%{
+        content: "Web Developer";
+    }
+    21%, 40%{
+        content: "Developer";
+    }
+    41%, 60%{
+        content: "Entrepreneur";
+    }
+    61%, 80%{
+        content: "Streamer";
+    }
+    81%, 100%{
+        content: "Semi-Professional Gamer";
+    }
+  }
 
 .links{
     font-size: 19px;
@@ -34,7 +112,7 @@ header{
 
 nav{
     grid-area: nav;
-    background-color: black;
+    background-color: #212529;
     padding: 10px 0;
     border: none;
     box-shadow: none;
@@ -60,11 +138,51 @@ nav a{
     background-color: transparent;
 }
 
+nav a:hover {
+    color: #6c757d;
+}
+
 main{
     grid-area: main;
     background-color: transparent;
     padding: 20px;
     margin-top: 100px;
+}
+
+section{
+     max-width: 100%;
+     width: 90%;
+     margin: 0 auto;
+}
+
+section h2 {
+    font-size: 29px;
+    margin-bottom: 15px;
+}
+
+.container{
+    max-width: 100%;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.container h1{
+    font-size: 29px;
+    margin-bottom: 15px;
+}
+
+.section h1{
+    font-size: 29px;
+    margin-bottom: 15px;
+}
+
+.contact-info{
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    margin: 5px 0;
 }
 
 aside{
@@ -76,6 +194,49 @@ aside{
 
 footer{
     grid-area: footer;
-    background-color: orange;
-    color:white
+    background-color: transparent;
+    text-align: center;
+    padding: 10px 0;
 }
+
+.contact-info a {
+    color: #6c757d;
+    transition: color 0.3s ease;
+  }
+  
+  .contact-info a:hover {
+    color: white;
+  }
+  
+  .container form,
+  .contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .container form input,
+  .container form textarea,
+  .contact-form input,
+  .contact-form textarea {
+    padding: 8px;
+    font-size: 14px;
+    border: 1px solid #6c757d;
+    background-color: #343a40;
+    color: white;
+    width: 100%;
+  }
+  
+  .container form button,
+  .contact-form button {
+    padding: 10px;
+    background-color: #6c757d;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .container form button:hover,
+  .contact-form button:hover {
+    background-color: #5a6268;
+  }
