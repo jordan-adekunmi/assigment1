@@ -55,7 +55,7 @@ header h1{
     background-color: transparent;
 }
 
-.typing-textP{
+.typing-text{
     font-size: 34px;
     font-weight: 600;
     min-width: 280px;
@@ -187,8 +187,8 @@ section h2 {
 
 aside{
     grid-area: aside;
-    background-color: yellow;
-    color: green;
+    background-color: #212529;
+    padding: 20px;
 
 }
 
@@ -239,4 +239,115 @@ footer{
   .container form button:hover,
   .contact-form button:hover {
     background-color: #5a6268;
+  }
+
+  .project-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+  }
+
+  .project-item{
+    background-color: #343a40;
+    padding: 15px;
+    border-radius: 5px;
+  }
+
+  .project-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+  }
+
+  .project-item h3{
+    font-size: 19px;
+    margin: 10px 0;
+  }
+
+  .project-item p {
+    font-size: 14px;
+  }
+
+
+
+  /* Mobile Responsiveness */
+  @media (max-width: 768px) {
+    body {
+      grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "aside"
+        "footer";
+      grid-template-columns: 1fr;
+      grid-template-rows: auto auto 1fr auto auto;
+    }
+  
+    header {
+      flex-direction: column;
+      padding: 10px 5%;
+    }
+  
+    nav {
+      padding: 10px 0;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    nav a {
+      margin: 10px 0;
+      font-size: 14px;
+    }
+  
+    main {
+      padding: 15px;
+      margin-top: 120px;
+    }
+  
+    .container h1,
+    section h1 {
+      font-size: 24px;
+    }
+  
+    aside {
+      padding: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .logo 
+    header h1 {
+      font-size: 24px;
+    }
+  
+    .links {
+      font-size: 16px;
+    }
+  
+    nav a {
+      font-size: 12px;
+    }
+  
+    .container h1,
+    section h1 {
+      font-size: 19px;
+    }
+  
+    .container form input,
+    .container form textarea,
+    .contact-form input,
+    .contact-form textarea {
+      font-size: 13px;
+    }
+  
+    .project-item h3 {
+      font-size: 16px;
+    }
+  
+    .project-item p {
+      font-size: 12px;
+    }
   }
